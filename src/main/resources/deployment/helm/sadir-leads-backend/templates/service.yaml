@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "sadir-leads-backend.fullname" . }}
+  labels:
+    {{- include "sadir-leads-backend.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values. }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "sadir-leads-backend.selectorLabels" . | nindent 4 }}
