@@ -1,1 +1,12 @@
-spring.application.name=sadir leads
+spring:
+  application:
+    name: SADiR Leads
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:leads_db
+    username: ns
+    password: ns2024
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+server:
+  port: ${APPLICATION_PORT:8080}
